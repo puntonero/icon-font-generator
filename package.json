@@ -14,10 +14,11 @@
   "author": "Tancredi Trugenberger",
   "license": "MIT",
   "dependencies": {
+    "ajv": "^6.10.2",
     "colors": "^1.2.1",
     "glob": "^7.1.2",
     "minimist": "^1.2.0",
-    "webfonts-generator": "^0.4.0"
+    "webfonts-generator": "file:../webfonts-generator"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
