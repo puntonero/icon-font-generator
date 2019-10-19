@@ -13,6 +13,10 @@
             text-align: center;
         }
 
+        .tmp{
+            text-align: left;
+        }
+
         .preview {
             width: 100px;
             display: inline-block;
@@ -30,7 +34,7 @@
         }
 
         .preview .inner {{ baseTag }} {
-            line-height: 85px;
+            line-height: 40px;
             font-size: 40px;
             color: #333;
         }
@@ -60,17 +64,22 @@
 
     <h1>{{ fontName }}</h1>
 
-    {{# each names }}
+    {{# each codepoints }}
 
         <div class="preview">
             <span class="inner">
-                <{{ ../baseTag }} class="{{ ../baseClassNames }} {{ ../classPrefix }}{{ this }}"></{{ ../baseTag }}>
+                <{{ ../baseTag }} class="{{ ../baseClassNames }} {{ ../classPrefix }}{{ @key }}"></{{ ../baseTag }}>
             </span>
             <br>
-            <span class='label'>{{ this }}</span>
+            <span class='label'>{{ @key }} this:{{ this }}</span>
         </div>
 
     {{/ each }}
-
+    <br/>
+    <div class="tmp">
+        {{# each codepoints }}
+            index:{{ @index }} key: {{ @key }} this:{{ this }}<br/>
+        {{/ each }}
+    </div>
 </body>
 </html>
